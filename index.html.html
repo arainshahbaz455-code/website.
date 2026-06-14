@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UI/UX Designer Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#030712',
+                            900: '#070C19',
+                            800: '#0F172A',
+                            700: '#1E293B',
+                            600: '#334155',
+                        },
+                        accent: {
+                            indigo: '#6366F1',
+                            violet: '#8B5CF6',
+                            pink: '#EC4899',
+                            emerald: '#10B981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* CSS Grid Pattern Background */
+        .grid-bg {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        /* Reveal animation transition */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden relative grid-bg">
+
+    <!-- Glowing Background Ambient Blur Orbs -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-indigo/10 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+    <div class="absolute top-[20%] right-10 w-[500px] h-[500px] bg-accent-violet/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-[45%] left-5 w-[450px] h-[450px] bg-accent-pink/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-[15%] right-1/4 w-[550px] h-[550px] bg-accent-indigo/10 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark-950/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="h-10 w-10 bg-gradient-to-tr from-accent-indigo via-accent-violet to-accent-pink rounded-xl flex items-center justify-center font-bold text-white shadow-lg shadow-accent-indigo/20 transition-transform duration-300 group-hover:scale-105">D</span>
+                <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">DesignStudio</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Selected Work</a>
+                <a href="#why-choose-me" class="hover:text-white transition-colors">Why Me</a>
+                <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-medium bg-gradient-to-r from-accent-indigo to-accent-violet text-white shadow-lg shadow-accent-indigo/20 hover:opacity-95 transition-all duration-200">
+                    Hire Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-950 border-b border-white/10 px-6 py-6 transition-all duration-300">
+            <nav class="flex flex-col space-y-4 text-slate-400 font-medium text-sm">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Selected Work</a>
+                <a href="#why-choose-me" class="hover:text-white transition-colors">Why Me</a>
+                <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="#contact" class="inline-block py-2.5 text-center rounded-xl bg-gradient-to-r from-accent-indigo to-accent-violet text-white font-medium">Get in Touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section (With high-fidelity embedded graphical UI mockup) -->
+    <section class="relative pt-32 pb-24 md:pt-44 md:pb-32 px-6 flex flex-col items-center justify-center">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <!-- Availability Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-8">
+                <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wide text-slate-300">Available for Select Projects (USA, UK, UAE, CA)</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+                I Design High-Converting Websites That Turn Visitors Into Paying Customers
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
+                Freelance UI/UX Designer specialized in landing pages, SaaS websites, and conversion-focused design for global clients.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl font-medium text-white bg-gradient-to-r from-accent-indigo via-accent-violet to-accent-pink shadow-lg shadow-accent-indigo/25 hover:opacity-95 transform hover:-translate-y-0.5 transition-all duration-200 text-center">
+                    View My Work
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl font-medium text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transform hover:-translate-y-0.5 transition-all duration-200 text-center">
+                    Hire Me
+                </a>
+            </div>
+
+            <!-- Beautiful CSS-Based Browser UI Illustration -->
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-accent-indigo/10 max-w-5xl mx-auto bg-dark-900">
+                <!-- Browser Header Bar -->
+                <div class="h-11 bg-dark-950/80 border-b border-white/5 flex items-center justify-between px-4 z-10 relative">
+                    <div class="flex space-x-1.5">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                    </div>
+                    <div class="bg-white/5 text-[10px] text-slate-400 px-10 py-1 rounded-md border border-white/5 font-mono">
+                        premium-dashboard.io/analytics
+                    </div>
+                    <div class="w-12"></div>
+                </div>
+
+                <!-- Graphic/UI Contents -->
+                <div class="grid lg:grid-cols-12 gap-6 p-6 md:p-8 text-left bg-gradient-to-b from-dark-900 to-dark-950">
+                    <!-- Left Mini Panel -->
+                    <div class="lg:col-span-3 space-y-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5 space-y-3">
+                            <div class="h-3 w-1/2 bg-white/10 rounded"></div>
+                            <div class="h-7 w-3/4 bg-gradient-to-r from-accent-indigo to-accent-violet rounded"></div>
+                            <div class="h-2 w-5/6 bg-white/5 rounded"></div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5 space-y-2">
+                            <div class="h-2 w-1/3 bg-white/10 rounded"></div>
+                            <div class="h-2 w-2/3 bg-white/5 rounded"></div>
+                            <div class="h-2 w-1/2 bg-white/5 rounded"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Middle Graph Mockup -->
+                    <div class="lg:col-span-6 p-6 rounded-xl bg-white/5 border border-white/5 flex flex-col justify-between min-h-[220px]">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Conversion Rate Progression</p>
+                                <p class="text-2xl font-bold text-white mt-1">+35.8%</p>
+                            </div>
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Live</span>
+                        </div>
+                        <!-- Vector Graph Line Illustration -->
+                        <div class="h-24 w-full mt-4 flex items-end">
+                            <svg class="w-full h-full" viewBox="0 0 100 50" preserveAspectRatio="none">
+                                <path d="M0,45 Q15,40 30,25 T60,15 T90,5 T100,2" fill="none" stroke="url(#gradient)" stroke-width="3" />
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#6366F1" />
+                                        <stop offset="50%" stop-color="#8B5CF6" />
+                                        <stop offset="100%" stop-color="#EC4899" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Right Quick Actions Panel -->
+                    <div class="lg:col-span-3 space-y-4">
+                        <div class="p-4 rounded-xl bg-gradient-to-tr from-accent-indigo/10 to-accent-violet/10 border border-accent-indigo/20 space-y-2">
+                            <p class="text-xs font-semibold text-white">Optimize Funnel</p>
+                            <p class="text-[10px] text-slate-400">Instantly execute design tests.</p>
+                            <div class="h-8 w-full bg-accent-indigo rounded-lg flex items-center justify-center text-[10px] font-bold text-white mt-2">
+                                Start Setup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Section (With High Quality Portrait Image & Graphic Stats) -->
+    <section id="about" class="py-24 px-6 border-t border-white/5 bg-dark-900/45 relative reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Professional Portrait from Unsplash -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-dark-800 to-dark-900 p-2.5 shadow-2xl">
+                        <!-- Guaranteed loading portrait representing a modern developer workspace/person -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="UI/UX Specialist Portrait" class="w-full h-[450px] object-cover rounded-2xl filter grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-dark-950/90 backdrop-blur-md border border-white/10 flex items-center space-x-3">
+                            <div class="w-3 h-3 rounded-full bg-accent-emerald animate-ping"></div>
+                            <p class="text-xs font-semibold text-white tracking-wide">Based globally. Partnering with companies worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: High Converting Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-semibold tracking-widest text-accent-indigo uppercase block">Introduction</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">
+                        I build modern digital experiences that turn views into value.
+                    </h2>
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+                        I help startups, businesses, and entrepreneurs build modern digital experiences that increase conversions, leads, and sales. My focus is not just design — but results.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        By prioritizing interface speed, structural typography, and custom graphical assets, I make sure your visual branding resonates directly with conversion benchmarks.
+                    </p>
+                    <!-- Visual Metrics Cards -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <p class="text-2xl font-extrabold text-white">40+</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-wider mt-1">International Clients Served</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <p class="text-2xl font-extrabold text-white">99%</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-wider mt-1">On-Time Delivery Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" class="py-24 px-6 border-t border-white/5 reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-indigo uppercase block mb-3">Service Scope</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Expert Design Workflows</h2>
+                <p class="text-slate-400 mt-4 leading-relaxed">I offer custom, conversion-focused layout designs aimed at expanding client retention and leads.</p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl bg-dark-900/40 border border-white/5 hover:border-white/10 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-accent-indigo/10 text-accent-indigo flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="layout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Landing Page Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        High-converting visual communication structured around strategic wireframes to move users down the acquisition funnel.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl bg-dark-900/40 border border-white/5 hover:border-white/10 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-accent-violet/10 text-accent-violet flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">SaaS Website Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Clear presentation of complicated software structures through interactive layouts, crisp component design, and engaging visuals.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl bg-dark-900/40 border border-white/5 hover:border-white/10 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-accent-pink/10 text-accent-pink flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">UI/UX Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        I structure logical user flows, site visual layouts, and detailed interactive assets built for product scale.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-2xl bg-dark-900/40 border border-white/5 hover:border-white/10 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="figma" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Figma to Web Conversion</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        I convert visual layouts into responsive live frameworks, maintaining consistent designs across devices.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-2xl bg-dark-900/40 border border-white/5 hover:border-white/10 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">CRO Optimization Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        I audit drop-off screens and apply custom adjustments to optimize signup velocity.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-tr from-accent-indigo/10 to-accent-violet/10 border border-white/10 flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Need a tailored plan?</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Let's coordinate on structural scope and platform requirements.</p>
+                    </div>
+                    <a href="#contact" class="mt-4 text-sm font-semibold text-white flex items-center hover:underline">
+                        Contact My Studio <i data-lucide="arrow-right" class="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Portfolio Section (With Real Project UI Screenshots) -->
+    <section id="portfolio" class="py-24 px-6 border-t border-white/5 bg-dark-900/20 reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-indigo uppercase block mb-3">Selected Projects</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Recent Visual Case Studies</h2>
+                <p class="text-slate-400 mt-4 leading-relaxed">Each layout balances functional minimalism with clear call-to-action systems.</p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-dark-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-300">
+                    <div class="aspect-[16/10] w-full overflow-hidden relative">
+                        <!-- High Resolution SaaS Dashboard Screenshot -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Apex Analytics Case Study" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">Increased conversions by 35%</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-accent-indigo uppercase tracking-wider block mb-1">Landing Page Design</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Apex Platform Landing Page</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Structured clear navigation layouts and pricing grids to help elevate SaaS organic trial enrollments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-dark-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-300">
+                    <div class="aspect-[16/10] w-full overflow-hidden relative">
+                        <!-- High Resolution Fintech Dashboard Screenshot -->
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Fintech Premium Interface" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">Double leads in 2 weeks</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-accent-violet uppercase tracking-wider block mb-1">Webflow Development</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Fintech Premium Hub</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Delivered interactive dashboard visual charts, optimizing screen assets for load performance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-dark-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-300">
+                    <div class="aspect-[16/10] w-full overflow-hidden relative">
+                        <!-- High Resolution Creative Design Space Unsplash Screenshot -->
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Solo Workspace Optimization" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">+48% Signup Velocity</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-accent-pink uppercase tracking-wider block mb-1">CRO Optimization</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Solo Growth Platform</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Restructured pricing page components and informational hierarchy to lower trial drop-off.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Choose Me Section -->
+    <section id="why-choose-me" class="py-24 px-6 border-t border-white/5 reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Why Choose Me points -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-semibold tracking-widest text-accent-indigo uppercase block">Philosophy</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">Structured Performance Design</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        I balance functional layouts with visual clarity, ensuring every component supports user engagement and business objectives.
+                    </p>
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                        <p class="text-xs italic text-slate-300">
+                            "Every design choice is calculated to address a business goal, ensuring layout values meet product objectives."
+                        </p>
+                        <p class="text-[10px] font-bold text-accent-indigo uppercase mt-2">— User-Behavior Analysis</p>
+                    </div>
+                </div>
+
+                <!-- Right: High Resolution Tech Workspace Image from Unsplash -->
+                <div class="lg:col-span-7 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 p-2 bg-dark-900 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80" alt="Designer Workspace Mockup" class="w-full h-[380px] object-cover rounded-2xl filter brightness-95">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent"></div>
+                        
+                        <!-- Mini Badges Grid -->
+                        <div class="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-dark-950/90 backdrop-blur-md border border-white/5 flex items-start space-x-3">
+                                <span class="p-1.5 bg-accent-indigo/10 rounded-lg text-accent-indigo"><i data-lucide="zap" class="w-4 h-4"></i></span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Fast Delivery</h4>
+                                    <p class="text-[10px] text-slate-400 mt-0.5">Reliable weekly milestones.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-dark-950/90 backdrop-blur-md border border-white/5 flex items-start space-x-3">
+                                <span class="p-1.5 bg-accent-violet/10 rounded-lg text-accent-violet"><i data-lucide="monitor" class="w-4 h-4"></i></span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Responsive Layout</h4>
+                                    <p class="text-[10px] text-slate-400 mt-0.5">Perfect mobile adjustments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section (With Executive Avatars & Verified Badges) -->
+    <section id="testimonials" class="py-24 px-6 border-t border-white/5 bg-dark-900/40 relative reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-indigo uppercase block mb-3">Client Trust</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Direct Partner Feedback</h2>
+                <p class="text-slate-400 mt-4 leading-relaxed">Collaborating with international teams to deliver structured design solutions.</p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="p-8 rounded-2xl bg-dark-950/80 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex space-x-1 text-yellow-500 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-8">
+                            “Helped us double our leads in 2 weeks. The visual structure was completely revamped, making information consumption highly direct and engaging.”
+                        </p>
+                    </div>
+                    <div class="border-t border-white/5 pt-4 flex items-center space-x-3">
+                        <div class="h-10 w-10 rounded-full overflow-hidden bg-slate-800 border border-white/10">
+                            <!-- High Quality executive face portrait -->
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins Avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Sarah Jenkins</p>
+                            <p class="text-[10px] text-slate-500">VP of Marketing, TechSaaS (USA)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="p-8 rounded-2xl bg-dark-950/80 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex space-x-1 text-yellow-500 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-8">
+                            “Clean, modern and very professional work. The structured responsive files helped save our development team weeks of integration work.”
+                        </p>
+                    </div>
+                    <div class="border-t border-white/5 pt-4 flex items-center space-x-3">
+                        <div class="h-10 w-10 rounded-full overflow-hidden bg-slate-800 border border-white/10">
+                            <!-- High Quality executive face portrait -->
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Alexandre Vance Avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Alexandre Vance</p>
+                            <p class="text-[10px] text-slate-500">Founder, Apex Pay (Canada)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="p-8 rounded-2xl bg-dark-950/80 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex space-x-1 text-yellow-500 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed mb-8">
+                            “Best UI/UX designer we’ve worked with. Understood our commercial requirements immediately and delivered high-fidelity wireframes that performed beautifully.”
+                        </p>
+                    </div>
+                    <div class="border-t border-white/5 pt-4 flex items-center space-x-3">
+                        <div class="h-10 w-10 rounded-full overflow-hidden bg-slate-800 border border-white/10">
+                            <!-- High Quality executive face portrait -->
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Majid Al-Mansoori Avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Majid Al-Mansoori</p>
+                            <p class="text-[10px] text-slate-500">Product Manager, Solara (UAE)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact Section (With graphical visual side panel) -->
+    <section id="contact" class="py-24 px-6 border-t border-white/5 relative reveal">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                
+                <!-- Left Column: Visual Call Booking Panel -->
+                <div class="lg:col-span-5 p-8 rounded-3xl bg-dark-900 border border-white/5 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent-indigo/10 to-transparent pointer-events-none"></div>
+                    
+                    <div class="relative z-10 space-y-6">
+                        <span class="text-xs font-semibold tracking-widest text-accent-indigo uppercase block">Inquiries</span>
+                        <h2 class="text-3xl font-bold text-white">Start Your Project Today</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Let's map out your interface scope and set up targeted milestones to elevate your conversion rates.
+                        </p>
+                        
+                        <!-- Visual Badges Panel -->
+                        <div class="space-y-3 pt-4">
+                            <div class="flex items-center space-x-3 text-slate-300">
+                                <span class="p-1.5 bg-white/5 rounded-lg text-emerald-400"><i data-lucide="check" class="w-4 h-4"></i></span>
+                                <span class="text-xs">Direct Figma & Loom progress reviews</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-slate-300">
+                                <span class="p-1.5 bg-white/5 rounded-lg text-emerald-400"><i data-lucide="check" class="w-4 h-4"></i></span>
+                                <span class="text-xs">Tailored weekly sprints</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Small graphical map snippet representation -->
+                    <div class="border-t border-white/5 pt-6 mt-8 relative z-10 flex items-center space-x-4">
+                        <div class="h-12 w-12 rounded-xl bg-accent-indigo/10 flex items-center justify-center text-accent-indigo">
+                            <i data-lucide="calendar" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Strategy Discovery Session</p>
+                            <p class="text-[10px] text-slate-500">Reviews scheduled within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Form -->
+                <div class="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-dark-900 border border-white/10 relative">
+                    <form id="portfolio-interactive-form" class="space-y-6 relative z-10">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-2">
+                                <label for="name" class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Your Name</label>
+                                <input type="text" id="name" required placeholder="John Doe" class="w-full bg-dark-950 border border-white/10 focus:border-accent-indigo rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <label for="email" class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Email Address</label>
+                                <input type="email" id="email" required placeholder="john@yourbrand.com" class="w-full bg-dark-950 border border-white/10 focus:border-accent-indigo rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="space-y-2">
+                            <label for="details" class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Project Details</label>
+                            <textarea id="details" required rows="4" placeholder="Briefly describe your product challenges, timeline, and goals..." class="w-full bg-dark-950 border border-white/10 focus:border-accent-indigo rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button type="submit" class="w-full px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-accent-indigo via-accent-violet to-accent-pink shadow-lg shadow-accent-indigo/25 hover:opacity-95 transform hover:-translate-y-0.5 transition-all duration-200 text-center">
+                                Start Your Project Today
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success State (Hidden by default) -->
+                    <div id="form-success" class="hidden text-center py-12 relative z-10">
+                        <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Message Received</h3>
+                        <p class="text-slate-400 text-sm max-w-sm mx-auto">
+                            Thank you. I have received your project details and will review your scope objectives within 24 hours.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/5 bg-dark-950 text-slate-500 text-xs font-medium">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <!-- Brand -->
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-slate-400">DesignStudio</span>
+                <span>•</span>
+                <span>UI/UX & Landing Page Design</span>
+            </div>
+
+            <!-- Copyright -->
+            <div>
+                &copy; <span id="year"></span> DesignStudio. All rights reserved.
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex space-x-6 text-slate-400">
+                <a href="#" class="hover:text-white transition-colors">Figma</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Dribbble</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('portfolio-interactive-form');
+        const successState = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.classList.add('hidden');
+            successState.classList.remove('hidden');
+        });
+
+        // Scroll Reveal Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+
+        // Create Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
